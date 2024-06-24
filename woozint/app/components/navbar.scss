@@ -1,0 +1,55 @@
+$orange: #db7032;
+$border_stroke: #D9D9D9;
+
+.navbar {
+    width: 100%;
+
+    .nav_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 3em .75em;
+        border-bottom: 1px solid $border_stroke;
+
+        .nav_links {
+            display: flex;
+            gap: 2em;
+            position: relative;
+            /* Added to position the pseudo-element relative to this container */
+
+            a {
+                position: relative;
+                //font-size: 21px;
+                font-weight: 400;
+                /* Ensures the pseudo-element is positioned correctly */
+                padding-bottom: 10px;
+                /* Adds space for the bar */
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 10px;
+                    /* Set the height to 10px */
+                    background: $orange;
+                    position: absolute;
+                    bottom: -10px;
+                    /* Positions the bar at the bottom of the nav_links */
+                    left: 0;
+                    transition: width .3s;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                    /* Expand the width to full on hover */
+                }
+            }
+        }
+
+        .login {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+    }
+}

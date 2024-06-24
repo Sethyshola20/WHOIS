@@ -1,0 +1,42 @@
+$orange: #db7032;
+$deep_blue: #22264b;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+
+ul {
+  list-style: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+p,
+h1,
+li,
+a {
+  color: $deep_blue;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+  transition: all .3s ease-in;
+
+  &:hover {
+    color: $orange
+  }
+}
+
+.special_link {
+  padding: .75em;
+  color: white;
+  border-radius: 10px;
+  background-color: $orange;
+
+}
